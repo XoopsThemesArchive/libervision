@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<!--
+    Libervision_theme is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+-->
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body>
+  <table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr id="header">
+	<td id="headerlogo"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>logo.jpg" width="325" height="100" alt="Libervis.com - Free software. Free people." /></a></td>
+	<td id="headerbanner" align="center"><{$xoops_banner}></td></tr>
+      
+  <table colspan="2" align="center" cellspacing="0" cellpadding="0" width="100%" border="0">
+	<tr align="center" bgcolor="#B0C1DD">
+	<td id="headerbar" width="375px" height="25px"></td>
+	<td id="headerbar_r" height="25px">
+                  <td width="1" height="25px" bgcolor="#B0C1DD"></td> 
+		
+                  <td width="1" height="25px" bgcolor="#B0C1DD"></td>
+                  <td id="headmenu"><a href="<{$xoops_url}>/index.php">HOME</a></td>
+                  
+                  <td width="1" height="25px" bgcolor="#B0C1DD"></td>
+                  <td id="headmenu"><a href="<{$xoops_url}>/modules/newbb/">FORUMS</a></td>
+
+                  <td width="1" height="25px" bgcolor="#B0C1DD"></td>
+                  <td id="headmenu"><a href="<{$xoops_url}>/modules/weblog/">BLOGS</a></td>
+
+                  <td width="1" height="25px" bgcolor="#B0C1DD"></td>
+                  <td id="headmenu"><a href="<{$xoops_url}>/modules/wfsection/">ARTICLES</a></td>
+	</tr></table>
+  <table colspan="2" align="center" cellspacing="0" cellpadding="0" width="100%" border="0">
+	<tr>
+	<td id="headerbar2" width="375px" height="30px"><td id="headerbar2_r" height="30px">&nbsp;&nbsp;<{if $xoops_isuser}> Welcome back <a href="<{$xoops_url}>/user.php"><{$xoops_uname}></a>&nbsp;&nbsp;&nbsp;<a href="<{$xoops_url}>/user.php">your 
+                  account </a> | <a href="http://add.my.yahoo.com/content?url=http%3A//www.libervis.com/modules/rss/rss.php"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" width="91" height="17" border="0" align=middle alt="Add to My Yahoo!"></a> &nbsp; <{else}> <a href="<{$xoops_url}>/register.php">Register Now!</a><{/if}> <{if $xoops_isuser}> 
+                  <a href="<{$xoops_url}>/user.php?op=logout"></a><{else}>&nbsp;&nbsp;&nbsp;|  <a href="<{$xoops_url}>/whyregister.php"> Why register?</a> | <a href="http://add.my.yahoo.com/content?url=http%3A//www.libervis.com/modules/rss/rss.php"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" width="91" height="17" border="0" align=middle alt="Add to My Yahoo!"></a>
+                  <{/if}> </td>
+  </table>
+
+  <table cellspacing="0">
+    <tr>
+      <td id="leftcolumn">
+        <!-- Start left blocks loop -->
+        <{foreach item=block from=$xoops_lblocks}>
+          <{include file="Libervision/theme_blockleft.html"}>
+        <{/foreach}>
+        <!-- End left blocks loop -->
+
+      </td>
+
+      <td id="centercolumn">
+	<div id="content">
+          <{$xoops_contents}>
+        <!-- Display center blocks if any -->
+        <{if $xoops_showcblock == 1}> </div>
+
+        <table cellspacing="0">
+          <tr>
+            <td id="centerCcolumn" colspan="2">
+
+            <!-- Start center-center blocks loop -->
+            <{foreach item=block from=$xoops_ccblocks}>
+              <{include file="Libervision/theme_blockcenter_c.html"}>
+            <{/foreach}>
+            <!-- End center-center blocks loop -->
+
+            </td>
+          </tr>
+          <tr>
+            <td id="centerLcolumn">
+
+            <!-- Start center-left blocks loop -->
+              <{foreach item=block from=$xoops_clblocks}>
+                <{include file="Libervision/theme_blockcenter_l.html"}>
+              <{/foreach}>
+            <!-- End center-left blocks loop -->
+
+            </td><td id="centerRcolumn">
+
+            <!-- Start center-right blocks loop -->
+              <{foreach item=block from=$xoops_crblocks}>
+                <{include file="Libervision/theme_blockcenter_r.html"}>
+              <{/foreach}>
+            <!-- End center-right blocks loop -->
+
+            </td>
+          </tr>
+        </table>
+
+        <{/if}>
+        <!-- End display center blocks -->
+      </td>
+
+      <{if $xoops_showrblock == 1}>
+
+      <td id="rightcolumn">
+        <!-- Start right blocks loop -->
+        <{foreach item=block from=$xoops_rblocks}>
+          <{include file="Libervision/theme_blockright.html"}>
+        <{/foreach}>
+        <!-- End right blocks loop -->
+      </td>
+
+      <{/if}>
+
+    </tr>
+  </table>
+
+  <table cellspacing="0">
+  <td id="footer">
+    <tr id="footerbar"><td><br><a href="http://www.libervis.com/privacy.php" target="_blank">Privacy Policy</a> | <a href="http://www.libervis.com/mission.php" target="_blank">Mission Statement</a> | <a href="http://www.libervis.com/aboutus.php" target="_blank">About Us</a> | <a href="http://www.libervis.com/modules/contact/" target="_blank">Contact Us</a> | <a href="http://www.libervis.com/sitemap.php" target="_blank">Site Map</a><br><br />
+Design by <a href="http://www.libervis.com" target="_blank">libervis.com</a><br><br /></td>
+    </tr>
+  </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
